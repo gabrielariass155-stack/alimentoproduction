@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Corpo Novo | Produto Digital Completo</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    :root {
+      --forest: #10261c;
+      --forest-2: #173b2a;
+      --green: #20bf75;
+      --mint: #eafff3;
+      --mint-2: #f4fff8;
+      --teal: #0fa3b1;
+      --coral: #ff5a5f;
+      --orange: #ff9b45;
+      --yellow: #f9c74f;
+      --ink: #17231d;
+      --muted: #66746b;
+      --paper: #fbfff9;
+      --white: #ffffff;
+      --line: rgba(23, 35, 29, 0.13);
+      --shadow: 0 18px 45px rgba(16, 38, 28, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      margin: 0;
+      background: #dfe8e0;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+    }
+
+    .print-note {
+      width: 210mm;
+      margin: 12px auto;
+      padding: 12px 16px;
+      border-radius: 8px;
+      background: #ffffff;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .page {
+      position: relative;
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto 14px;
+      padding: 17mm;
+      overflow: hidden;
+      page-break-after: always;
+      background:
+        radial-gradient(circle at 8% 8%, rgba(32, 191, 117, 0.12), transparent 32%),
+        var(--paper);
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    .page.tight {
+      padding: 13mm;
+    }
+
+    .cover,
+    .divider,
+    .back-cover {
+      color: var(--white);
+      background: var(--forest);
+    }
+
+    .cover {
+      display: grid;
+      align-content: space-between;
+      padding: 0;
+      background:
+        linear-gradient(90deg, rgba(8, 30, 20, 0.92) 0%, rgba(8, 30, 20, 0.74) 48%, rgba(8, 30, 20, 0.25) 100%),
+        url("../assets/images/projeto-corpo-novo-hero.png") center/cover;
+    }
+
+    .cover-inner {
+      padding: 20mm 17mm 0;
+      max-width: 134mm;
+    }
+
+    .cover-bottom {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5mm;
+      padding: 0 17mm 18mm;
+    }
+
+    .cover-card {
+      min-height: 34mm;
+      padding: 6mm;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+    }
+
+    .cover-card strong {
+      display: block;
+      margin-bottom: 2mm;
+      color: var(--yellow);
+      font-size: 15px;
+    }
+
+    .cover-card span {
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 11px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin: 8mm 0 6mm;
+      color: var(--white);
+      font-size: 54px;
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin-bottom: 6mm;
+      color: var(--forest);
+      font-size: 30px;
+      line-height: 1.06;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin-bottom: 2.4mm;
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 12.3px;
+    }
+
+    .cover p,
+    .divider p,
+    .back-cover p {
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 15px;
+    }
+
+    .badge,
+    .dark-badge,
+    .recipe-tag {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      border-radius: 999px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .badge {
+      padding: 7px 11px;
+      background: rgba(32, 191, 117, 0.14);
+      color: var(--forest-2);
+      font-size: 10px;
+    }
+
+    .dark-badge {
+      padding: 7px 11px;
+      background: rgba(255, 255, 255, 0.15);
+      color: #b8ffd8;
+      font-size: 10px;
+    }
+
+    .lead {
+      max-width: 146mm;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 5mm;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card,
+    .kit-card,
+    .note,
+    .recipe-card,
+    .stat-card,
+    .tracker-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: var(--shadow);
+    }
+
+    .card,
+    .kit-card,
+    .note,
+    .stat-card,
+    .tracker-card {
+      padding: 6mm;
+    }
+
+    .note {
+      background: linear-gradient(135deg, rgba(32, 191, 117, 0.13), rgba(15, 163, 177, 0.08));
+      box-shadow: none;
+    }
+
+    .note strong {
+      color: var(--forest-2);
+    }
+
+    .toc-list {
+      display: grid;
+      gap: 3mm;
+      margin: 9mm 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .toc-list li {
+      display: grid;
+      grid-template-columns: 18mm 1fr 12mm;
+      gap: 4mm;
+      align-items: center;
+      padding: 4mm 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .toc-list span {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .toc-list small {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      text-align: right;
+    }
+
+    ul,
+    ol {
+      margin: 0;
+      padding-left: 17px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    li {
+      margin-bottom: 2.1mm;
+    }
+
+    .page-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8mm;
+      margin-bottom: 8mm;
+    }
+
+    .page-number {
+      min-width: 16mm;
+      color: rgba(16, 38, 28, 0.14);
+      font-size: 40px;
+      font-weight: 900;
+      line-height: 1;
+      text-align: right;
+    }
+
+    .mock-stack {
+      position: relative;
+      min-height: 88mm;
+      margin-top: 8mm;
+    }
+
+    .mock-book,
+    .mock-planner,
+    .mock-phone {
+      position: absolute;
+      border-radius: 8px;
+      box-shadow: 0 18px 46px rgba(16, 38, 28, 0.22);
+    }
+
+    .mock-book {
+      left: 6mm;
+      top: 2mm;
+      width: 56mm;
+      height: 78mm;
+      padding: 8mm 7mm;
+      background: linear-gradient(155deg, #0e2b1e 0%, #20bf75 58%, #ff875a 100%);
+      color: white;
+      transform: rotate(-5deg);
+    }
+
+    .mock-book strong {
+      display: block;
+      margin-top: 18mm;
+      font-size: 23px;
+      line-height: 1;
+    }
+
+    .mock-book span {
+      display: inline-flex;
+      padding: 2mm 3mm;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.17);
+      font-size: 9px;
+      font-weight: 900;
+    }
+
+    .mock-planner {
+      left: 58mm;
+      top: 14mm;
+      width: 55mm;
+      height: 66mm;
+      padding: 7mm;
+      background: white;
+      transform: rotate(4deg);
+    }
+
+    .mock-planner h3 {
+      color: var(--forest-2);
+    }
+
+    .mock-line {
+      height: 3mm;
+      margin: 3mm 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(32, 191, 117, 0.24), rgba(15, 163, 177, 0.14));
+    }
+
+    .mock-phone {
+      left: 100mm;
+      top: 32mm;
+      width: 39mm;
+      height: 54mm;
+      padding: 4mm;
+      border: 3mm solid var(--forest);
+      background: var(--forest);
+    }
+
+    .mock-phone-screen {
+      height: 100%;
+      padding: 4mm;
+      border-radius: 5px;
+      background: var(--mint-2);
+      color: var(--forest-2);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2mm;
+      margin-top: 5mm;
+    }
+
+    .pill {
+      padding: 2mm 3mm;
+      border-radius: 999px;
+      background: var(--mint);
+      color: var(--forest-2);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .divider {
+      display: grid;
+      align-content: end;
+      padding: 17mm;
+      background:
+        linear-gradient(180deg, rgba(10, 41, 27, 0.28), rgba(10, 41, 27, 0.94)),
+        url("projeto-corpo-novo-mealprep-pdf-corrigida.png") center/cover;
+    }
+
+    .divider h2 {
+      max-width: 130mm;
+      color: white;
+      font-size: 44px;
+    }
+
+    .divider-num {
+      color: rgba(255, 255, 255, 0.16);
+      font-size: 118px;
+      font-weight: 900;
+      line-height: 0.8;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 5mm;
+      font-size: 10.4px;
+      page-break-inside: avoid;
+    }
+
+    th,
+    td {
+      border: 1px solid rgba(23, 35, 29, 0.14);
+      padding: 3mm;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--forest-2);
+      color: white;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    td {
+      background: rgba(255, 255, 255, 0.86);
+      color: var(--muted);
+    }
+
+    .menu-table th:first-child,
+    .planner-table th:first-child {
+      width: 10%;
+    }
+
+    .shop-table th:first-child {
+      width: 25%;
+    }
+
+    .shop-table th:nth-child(2) {
+      width: 39%;
+    }
+
+    .formula {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4mm;
+      margin: 8mm 0;
+    }
+
+    .formula-card {
+      min-height: 48mm;
+      padding: 6mm;
+      border-radius: 8px;
+      color: white;
+      background: var(--forest-2);
+    }
+
+    .formula-card:nth-child(2) {
+      background: linear-gradient(135deg, var(--green), var(--teal));
+    }
+
+    .formula-card:nth-child(3) {
+      background: linear-gradient(135deg, var(--orange), var(--yellow));
+      color: #2b2115;
+    }
+
+    .formula-card strong {
+      display: block;
+      margin-bottom: 4mm;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .formula-card p {
+      color: inherit;
+      font-weight: 700;
+    }
+
+    .recipe-card {
+      padding: 0;
+      overflow: hidden;
+      page-break-inside: avoid;
+    }
+
+    .recipe-card + .recipe-card {
+      margin-top: 4mm;
+    }
+
+    .recipe-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 5mm;
+      align-items: flex-start;
+      padding: 5mm 6mm 3mm;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(32, 191, 117, 0.1), rgba(15, 163, 177, 0.05));
+    }
+
+    .recipe-top h3 {
+      margin: 0;
+      font-size: 17px;
+    }
+
+    .recipe-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 2mm;
+      min-width: 46mm;
+    }
+
+    .recipe-tag {
+      padding: 1.8mm 2.4mm;
+      background: white;
+      color: var(--forest-2);
+      font-size: 8.5px;
+      box-shadow: 0 6px 16px rgba(16, 38, 28, 0.08);
+    }
+
+    .recipe-body {
+      display: grid;
+      grid-template-columns: 0.84fr 1.16fr;
+      gap: 5mm;
+      padding: 5mm 6mm 6mm;
+    }
+
+    .tip {
+      margin-top: 3mm;
+      padding: 3mm;
+      border-left: 4px solid var(--teal);
+      border-radius: 0 6px 6px 0;
+      background: rgba(15, 163, 177, 0.08);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .tracker-card {
+      box-shadow: none;
+    }
+
+    .planner-table {
+      margin-top: 4mm;
+      font-size: 9.8px;
+    }
+
+    .planner-table th:nth-child(2) {
+      width: 29%;
+    }
+
+    .planner-table th:nth-child(3),
+    .planner-table th:nth-child(4),
+    .planner-table th:nth-child(5) {
+      width: 13%;
+      text-align: center;
+    }
+
+    .check {
+      color: #91a79b;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .habit-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2mm;
+      margin-top: 5mm;
+    }
+
+    .habit-day {
+      min-height: 21mm;
+      padding: 2.4mm;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .habit-day strong {
+      display: block;
+      margin-bottom: 1.6mm;
+      color: var(--forest-2);
+      font-size: 10px;
+    }
+
+    .habit-day span {
+      display: block;
+      color: var(--muted);
+      font-size: 8.8px;
+      line-height: 1.5;
+    }
+
+    .movement-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4mm;
+      margin-top: 5mm;
+    }
+
+    .movement-list .card {
+      min-height: 43mm;
+      box-shadow: none;
+    }
+
+    .footer {
+      position: absolute;
+      left: 17mm;
+      right: 17mm;
+      bottom: 8mm;
+      display: flex;
+      justify-content: space-between;
+      gap: 10mm;
+      border-top: 1px solid rgba(23, 35, 29, 0.12);
+      padding-top: 3mm;
+      color: #8b9a90;
+      font-size: 9.5px;
+      font-weight: 700;
+    }
+
+    .cover .footer,
+    .divider .footer,
+    .back-cover .footer {
+      display: none;
+    }
+
+    .back-cover {
+      display: grid;
+      align-content: center;
+      text-align: center;
+      background:
+        linear-gradient(180deg, rgba(9, 38, 25, 0.9), rgba(9, 38, 25, 0.94)),
+        url("projeto-corpo-novo-mealprep-pdf-corrigida.png") center/cover;
+    }
+
+    .back-cover h2 {
+      color: white;
+      font-size: 44px;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .print-note {
+        display: none;
+      }
+
+      .page {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="print-note">Arquivo fonte do produto digital. O PDF final é o arquivo de entrega ao cliente.</div>
+
+  <section class="page cover">
+    <div class="cover-inner">
+      <span class="dark-badge">Ebook + Planner + Lista + Cardápio</span>
+      <h1>Projeto Corpo Novo</h1>
+      <p>Receitas fitness baratas e uma rotina saudável de 21 dias para comer melhor, organizar sua semana e começar sem academia.</p>
+      <div class="pill-row">
+        <span class="pill">Produto 100% digital</span>
+        <span class="pill">Rotina real</span>
+        <span class="pill">Comida simples</span>
+      </div>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-card"><strong>Receitas</strong><span>Opções econômicas para café, almoço, jantar e lanches.</span></div>
+      <div class="cover-card"><strong>21 dias</strong><span>Planner para acompanhar hábitos, alimentação e movimento.</span></div>
+      <div class="cover-card"><strong>7 dias</strong><span>Cardápio simples para reduzir decisões e começar hoje.</span></div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-title-row">
+      <div>
+        <span class="badge">Comece por aqui</span>
+        <h2>Como usar este material</h2>
+        <p class="lead">Este produto foi criado para transformar intenção em rotina. Você não precisa mudar tudo em um dia. Precisa de um plano simples, alimentos acessíveis e repetição suficiente para criar confiança.</p>
+      </div>
+      <div class="page-number">01</div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Seu primeiro passo</h3>
+        <ol>
+          <li>Escolha 4 receitas para esta semana.</li>
+          <li>Monte a lista de compras econômica.</li>
+          <li>Prepare uma base simples: arroz, feijão, proteína e legumes.</li>
+          <li>Marque seus hábitos no planner por 21 dias.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>O que esperar</h3>
+        <p>Mais organização, menos dúvidas na hora de comer e uma rotina mais fácil de repetir. O foco é consistência, não perfeição.</p>
+        <div class="note"><strong>Aviso:</strong> conteúdo educativo. Não substitui orientação médica, nutricional ou profissional.</div>
+      </div>
+    </div>
+    <ul class="toc-list">
+      <li><span>01</span> Método Corpo Novo <small>p. 04</small></li>
+      <li><span>02</span> Compras econômicas <small>p. 07</small></li>
+      <li><span>03</span> Cardápio simples de 7 dias <small>p. 08</small></li>
+      <li><span>04</span> Receitas fitness baratas <small>p. 09</small></li>
+      <li><span>05</span> Planner fitness de 21 dias <small>p. 14</small></li>
+      <li><span>06</span> Checklist final <small>p. 18</small></li>
+    </ul>
+    <div class="footer"><span>Projeto Corpo Novo</span><span>Boas-vindas</span></div>
+  </section>
+
+  <section class="page">
+    <div class="page-title-row">
+      <div>
+        <span class="badge">Seu kit digital</span>
+        <h2>O que você recebeu</h2>
+        <p class="lead">Tudo foi organizado para você comprar melhor, cozinhar com mais praticidade e acompanhar a rotina sem complicação.</p>
+      </div>
+      <div class="page-number">02</div>
+    </div>
+    <div class="grid-4">
+      <div class="kit-card"><h3>Ebook de receitas</h3><p>Receitas baratas com ingredientes fáceis de encontrar.</p></div>
+      <div class="kit-card"><h3>Planner 21 dias</h3><p>Controle visual de água, refeições, movimento e observações.</p></div>
+      <div class="kit-card"><h3>Lista de compras</h3><p>Base econômica para montar refeições saudáveis sem desperdício.</p></div>
+      <div class="kit-card"><h3>Cardápio 7 dias</h3><p>Um roteiro simples para começar sem travar nas decisões.</p></div>
+    </div>
+    <div class="mock-stack" aria-hidden="true">
+      <div class="mock-book"><span>Ebook fitness</span><strong>Projeto Corpo Novo</strong></div>
+      <div class="mock-planner"><h3>Planner 21 Dias</h3><div class="mock-line"></div><div class="mock-line"></div><div class="mock-line"></div><div class="mock-line"></div><div class="mock-line"></div></div>
+      <div class="mock-phone"><div class="mock-phone-screen">Cardápio simples<br><br>• Café<br>• Almoço<br>• Lanche<br>• Jantar</div></div>
+    </div>
+    <div class="footer"><span>Projeto Corpo Novo</span><span>Kit digital</span></div>
+  </section>
+
+  <section class="page divider">
+    <div>
+      <div class="divider-num">01</div>
+      <span class="dark-badge">Método Corpo Novo</span>
+      <h2>Comida simples, rotina possível e repetição inteligente.</h2>
+      <p>O começo fica mais leve quando você sabe o que comprar, como montar o prato e o que repetir durante a semana.</p>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="page-title-row">
+      <div>
+        <span class="badge">Método simples</span>
+        <h2>Monte refeições em 3 blocos</h2>
+        <p class="lead">Use esta fórmula para criar refeições equilibradas sem depender de receitas difíceis ou ingredientes caros.</p>
+      </div>
+      <div class="page-number">04</div>
+    </div>
+    <div class="formula">
+      <div class="formula-card"><strong>1</strong><h3 style="color:white;">Proteína</h3><p>Ovos, frango, sardinha, carne moída, feijão, lentilha, iogurte natural.</p></div>
+      <div class="formula-card"><strong>2</strong><h3 style="color:white;">Energia</h3><p>Arroz, batata-doce, mandioca, aveia, banana, tapioca, pão integral.</p></div>
+      <div class="formula-card"><strong>3</strong><h3>Volume</h3><p>Alface, repolho, cenoura, tomate, abobrinha, couve, brócolis ou legumes da estação.</p></div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Prato prático</h3>
+        <ul>
+          <li>Metade do prato: verduras e legumes.</li>
+          <li>Um quarto: proteína.</li>
+          <li>Um quarto: arroz, batata, mandioca, tapioca ou outra base.</li>
+          <li>Temperos simples para manter sabor.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Quando estiver sem tempo</h3>
+        <p>Repita uma combinação pronta. Exemplo: arroz + feijão + ovo + salada. Repetição bem feita economiza dinheiro e energia mental.</p>
+      </div>
+    </div>
+    <div class="footer"><span>Projeto Corpo Novo</span><span>Método</span></div>
+  </section>
+
+  <section class="page">
+    <div class="page-title-row">
+      <div>
+        <span class="badge">Preparo da semana</span>
+        <h2>Ritual de 60 minutos</h2>
+        <p class="lead">Uma pequena organização no início da semana reduz pedidos por impulso e facilita escolhas melhores.</p>
+      </div>
+      <div class="page-number">05</div>
+    </div>
+    <div class="grid-3">
+      <div class="stat-card"><h3>15 min</h3><p>Lave folhas, pique legumes e separe frutas para lanches rápidos.</p></div>
+      <div class="stat-card"><h3>25 min</h3><p>Cozinhe arroz, feijão, batata ou outra base que rende várias refeições.</p></div>
+      <div class="stat-card"><h3>20 min</h3><p>Prepare frango, ovos cozidos, carne moída ou proteína escolhida.</p></div>
+    </div>
+    <div class="note" style="margin-top: 7mm;">
+      <h3>Como economizar sem perder sabor</h3>
+      <p>Compre legumes da estação, use temperos naturais, reaproveite frango desfiado em várias receitas e transforme sobras em omelete, sopa, recheio ou salada completa.</p>
+    </div>
+    <div class="grid-2" style="margin-top: 7mm;">
+      <div class="card"><h3>Base que rende</h3><ul><li>Arroz e feijão</li><li>Frango desfiado</li><li>Legumes refogados</li><li>Ovos cozidos</li></ul></div>
+      <div class="card"><h3>Evite desperdício</h3><ul><li>Planeje antes de comprar</li><li>Congele porções</li><li>Repita combinações</li><li>Use frutas maduras em vitaminas</li></ul></div>
+    </div>
+    <div class="footer"><span>Projeto Corpo Novo</span><span>Preparo inteligente</span></div>
+  </section>
+
+  <section class="page">
+    <div class="page-title-row">
+      <div>
+        <span class="badge">Lista econômica</span>
+        <h2>Compras para começar</h2>
+        <p class="lead">Escolha os itens que cabem no seu orçamento. A ideia é ter ingredientes versáteis para muitas combinações.</p>
+      </div>
+      <div class="page-number">06</div>
+    </div>
+    <table class="shop-table">
+      <thead><tr><th>Categoria</th><th>Itens econômicos</th><th>Como usar</th></tr></thead>
+      <tbody>
+        <tr><td>Proteínas</td><td>Ovos, frango, sardinha, carne moída, feijão, lentilha, iogurte natural</td><td>Omeletes, marmitas, patês, sopas, recheios e bowls.</td></tr>
+        <tr><td>Carboidratos</td><td>Arroz, batata-doce, mandioca, aveia, banana, tapioca, macarrão, pão integral</td><td>Base das refeições, café da manhã e lanches.</td></tr>
+        <tr><td>Verduras e legumes</td><td>Alface, repolho, cenoura, tomate, abobrinha, chuchu, couve, brócolis</td><td>Saladas, refogados, sopas, omeletes e marmitas.</td></tr>
+        <tr><td>Frutas</td><td>Banana, maçã, mamão, laranja e frutas da estação</td><td>Lanches, vitaminas, aveia e sobremesas simples.</td></tr>
+        <tr><td>Gorduras e extras</td><td>Amendoim, pasta de amendoim, azeite, castanhas em pequena quantidade</td><td>Use pouco para dar saciedade e sabor.</td></tr>
+        <tr><td>Temperos</td><td>Alho, cebola, cheiro-verde, páprica, limão, pimenta, orégano</td><td>Transformam comida simples em refeição gostosa.</td></tr>
+      </tbody>
+    </table>
+    <div class="note" style="margin-top: 6mm;"><strong>Troca inteligente:</strong> se frango estiver caro, use ovos, sardinha ou feijão com arroz. Se brócolis estiver caro, use repolho, cenoura, chuchu ou legumes da estação.</div>
+    <div class="footer"><span>Projeto Corpo Novo</span><span>Lista de compras</span></div>
+  </section>
+
+  <section class="page tight">
+    <div class="page-title-row">
+      <div>
+        <span class="badge">Cardápio simples</span>
+        <h2>7 dias para reduzir decisões</h2>
+        <p class="lead">Use como roteiro inicial. Você pode repetir refeições e trocar dias conforme sua rotina.</p>
+      </div>
+      <div class="page-number">07</div>
+    </div>
+    <table class="menu-table">
+      <thead><tr><th>Dia</th><th>Café</th><th>Almoço</th><th>Lanche</th><th>Jantar</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Panqueca de banana</td><td>Arroz, feijão, frango e salada</td><td>Maçã com amendoim</td><td>Omelete com legumes</td></tr>
+        <tr><td>2</td><td>Ovos com tapioca</td><td>Marmita de frango desfiado</td><td>Iogurte com aveia</td><td>Sopa de legumes</td></tr>
+        <tr><td>3</td><td>Vitamina de banana</td><td>Arroz, feijão, carne moída e couve</td><td>Banana com canela</td><td>Crepioca com salada</td></tr>
+        <tr><td>4</td><td>Overnight oats</td><td>Escondidinho de batata-doce</td><td>Laranja ou mamão</td><td>Salada completa com ovo</td></tr>
+        <tr><td>5</td><td>Tapioca com ovo</td><td>Arroz, feijão, sardinha e legumes</td><td>Iogurte com fruta</td><td>Frango com abobrinha</td></tr>
+        <tr><td>6</td><td>Omelete com tomate</td><td>Marmita de frango, arroz e brócolis</td><td>Maçã ou banana</td><td>Sanduíche integral de frango</td></tr>
+        <tr><td>7</td><td>Banana com aveia</td><td>Arroz, feijão, ovo e salada</td><td>Amendoim em pequena porção</td><td>Sopa cremosa de legumes</td></tr>
+      </tbody>
+    </table>
+    <div class="grid-2" style="margin-top: 6mm;">
+      <div class="card"><h3>Para ganhar tempo</h3><p>Escolha dois cafés, dois almoços e dois jantares favoritos. Repetir facilita a execução.</p></div>
+      <div class="card"><h3>Para gastar menos</h3><p>Monte o cardápio com alimentos que aparecem mais de uma vez na semana.</p></div>
+    </div>
+    <div class="footer"><span>Projeto Corpo Novo</span><span>Cardápio</span></div>
+  </section>
+
+  <section class="page divider">
+    <div>
+      <div class="divider-num">02</div>
+      <span class="dark-badge">Receitas fitness baratas</span>
+      <h2>Receitas práticas, bonitas e possíveis para a rotina real.</h2>
+      <p>Use estas ideias como base e ajuste temperos, porções e acompanhamentos ao seu gosto.</p>
+    </div>
+  </section>
+
+  <section class="page tight">
+    <div class="page-title-row">
+      <div><span class="badge">Café e lanches</span><h2>Comece o dia sem complicar</h2></div>
+      <div class="page-number">09</div>
+    </div>
+    <article class="recipe-card">
+      <div class="recipe-top"><h3>Panqueca de banana com aveia</h3><div class="recipe-tags"><span class="recipe-tag">10 min</span><span class="recipe-tag">1 porção</span></div></div>
+      <div class="recipe-body"><div><strong>Ingredientes</strong><ul><li>1 banana madura</li><li>1 ovo</li><li>2 colheres de aveia</li><li>Canela</li></ul></div><div><strong>Preparo</strong><ol><li>Amasse a banana.</li><li>Misture com ovo, aveia e canela.</li><li>Doure em frigideira antiaderente.</li></ol><div class="tip">Use banana madura para adoçar sem açúcar.</div></div></div>
+    </article>
+    <article class="recipe-card">
+      <div class="recipe-top"><h3>Overnight oats simples</h3><div class="recipe-tags"><span class="recipe-tag">5 min</span><span class="recipe-tag">1 pote</span></div></div>
+      <div class="recipe-body"><div><strong>Ingredientes</strong><ul><li>3 colheres de aveia</li><li>1 pote de iogurte natural</li><li>1 fruta picada</li><li>Canela ou cacau</li></ul></div><div><strong>Preparo</strong><ol><li>Misture tudo em um pote.</li><li>Leve à geladeira durante a noite.</li><li>Consuma no café ou lanche.</li></ol><div class="tip">Banana, maçã e mamão costumam render bem.</div></div></div>
+    </article>
+    <article class="recipe-card">
+      <div class="recipe-top"><h3>Crepioca recheada</h3><div class="recipe-tags"><span class="recipe-tag">12 min</span><span class="recipe-tag">1 porção</span></div></div>
+      <div class="recipe-body"><div><strong>Ingredientes</strong><ul><li>1 ovo</li><li>2 colheres de tapioca</li><li>Sal e orégano</li><li>Frango desfiado ou queijo branco</li></ul></div><div><strong>Preparo</strong><ol><li>Misture ovo, tapioca e temperos.</li><li>Doure dos dois lados.</li><li>Recheie e dobre.</li></ol><div class="tip">Reaproveite frango preparado da semana.</div></div></div>
+    </article>
+    <div class="footer"><span>Projeto Corpo Novo</span><span>Receitas</span></div>
+  </section>
+
+  <section class="page tight">
+    <div class="page-title-row">
+      <div><span class="badge">Almoço e marmitas</span><h2>Bases econômicas que rendem</h2></div>
+      <div class="page-number">10</div>
+    </div>
+    <article class="recipe-card">
+      <div class="recipe-top"><h3>Frango desfiado coringa</h3><div class="recipe-tags"><span class="recipe-tag">30 min</span><span class="recipe-tag">4 porções</span></div></div>
+      <div class="recipe-body"><div><strong>Ingredientes</strong><ul><li>500 g de frango</li><li>Alho, cebola e sal</li><li>Páprica ou colorau</li><li>Cheiro-verde</li></ul></div><div><strong>Preparo</strong><ol><li>Cozinhe o frango com temperos.</li><li>Desfie e refogue com cebola.</li><li>Guarde em porções.</li></ol><div class="tip">Use em crepioca, sanduíche, marmita, sopa e salada.</div></div></div>
+    </article>
+    <article class="recipe-card">
+      <div class="recipe-top"><h3>Marmita brasileira equilibrada</h3><div class="recipe-tags"><span class="recipe-tag">20 min</span><span class="recipe-tag">1 porção</span></div></div>
+      <div class="recipe-body"><div><strong>Ingredientes</strong><ul><li>Arroz</li><li>Feijão</li><li>Frango ou ovo</li><li>Salada e legumes</li></ul></div><div><strong>Preparo</strong><ol><li>Monte arroz e feijão.</li><li>Adicione proteína.</li><li>Complete com salada e legumes.</li></ol><div class="tip">Arroz com feijão é base acessível e versátil.</div></div></div>
+    </article>
+    <article class="recipe-card">
+      <div class="recipe-top"><h3>Escondidinho de batata-doce</h3><div class="recipe-tags"><span class="recipe-tag">35 min</span><span class="recipe-tag">3 porções</span></div></div>
+      <div class="recipe-body"><div><strong>Ingredientes</strong><ul><li>2 batatas-doces cozidas</li><li>Frango desfiado</li><li>Tomate e cebola</li><li>Sal e temperos</li></ul></div><div><strong>Preparo</strong><ol><li>Amasse a batata-doce.</li><li>Refogue o frango.</li><li>Monte camadas e aqueça.</li></ol><div class="tip">Faça em travessa e divida em marmitas.</div></div></div>
+    </article>
+    <div class="footer"><span>Projeto Corpo Novo</span><span>Receitas</span></div>
+  </section>
+
+  <section class="page tight">
+    <div class="page-title-row">
+      <div><span class="badge">Jantares leves</span><h2>Opções rápidas para não pedir delivery</h2></div>
+      <div class="page-number">11</div>
+    </div>
+    <article class="recipe-card">
+      <div class="recipe-top"><h3>Omelete de legumes</h3><div class="recipe-tags"><span class="recipe-tag">12 min</span><span class="recipe-tag">1 porção</span></div></div>
+      <div class="recipe-body"><div><strong>Ingredientes</strong><ul><li>2 ovos</li><li>Tomate, cenoura ou abobrinha</li><li>Sal e orégano</li><li>Cheiro-verde</li></ul></div><div><strong>Preparo</strong><ol><li>Bata os ovos.</li><li>Misture legumes picados.</li><li>Doure em fogo baixo.</li></ol><div class="tip">Use sobras de legumes para evitar desperdício.</div></div></div>
+    </article>
+    <article class="recipe-card">
+      <div class="recipe-top"><h3>Sopa de legumes com frango</h3><div class="recipe-tags"><span class="recipe-tag">30 min</span><span class="recipe-tag">3 porções</span></div></div>
+      <div class="recipe-body"><div><strong>Ingredientes</strong><ul><li>Frango desfiado</li><li>Cenoura, chuchu e abobrinha</li><li>Batata ou mandioca</li><li>Alho e cebola</li></ul></div><div><strong>Preparo</strong><ol><li>Refogue alho e cebola.</li><li>Cozinhe legumes.</li><li>Adicione frango e temperos.</li></ol><div class="tip">Congele porções para noites corridas.</div></div></div>
+    </article>
+    <article class="recipe-card">
+      <div class="recipe-top"><h3>Sanduíche integral de frango</h3><div class="recipe-tags"><span class="recipe-tag">10 min</span><span class="recipe-tag">1 porção</span></div></div>
+      <div class="recipe-body"><div><strong>Ingredientes</strong><ul><li>2 fatias de pão integral</li><li>Frango desfiado</li><li>Alface e tomate</li><li>Iogurte natural ou requeijão leve</li></ul></div><div><strong>Preparo</strong><ol><li>Misture frango com iogurte.</li><li>Monte com salada.</li><li>Sirva com fruta se precisar.</li></ol><div class="tip">Rápido, barato e melhor que improvisar qualquer coisa.</div></div></div>
+    </article>
+    <div class="footer"><span>Projeto Corpo Novo</span><span>Receitas</span></div>
+  </section>
+
+  <section class="page tight">
+    <div class="page-title-row">
+      <div><span class="badge">Extras inteligentes</span><h2>Sabor e lanche sem gastar muito</h2></div>
+      <div class="page-number">12</div>
+    </div>
+    <div class="grid-2">
+      <div class="card"><h3>Molho de iogurte</h3><p>Iogurte natural, limão, sal, alho e cheiro-verde. Use em sanduíches, saladas e frango.</p></div>
+      <div class="card"><h3>Patê de sardinha</h3><p>Sardinha escorrida, cenoura ralada, limão e iogurte ou requeijão. Sirva com pão ou salada.</p></div>
+      <div class="card"><h3>Banana com aveia</h3><p>Banana, aveia e canela. Um lanche simples, doce e barato para tarde corrida.</p></div>
+      <div class="card"><h3>Mix econômico</h3><p>Amendoim em pequena porção com fruta. Ajuda na saciedade sem precisar comprar snacks caros.</p></div>
+    </div>
+    <div class="note" style="margin-top: 8mm;"><h3>Regra de ouro</h3><p>Se uma refeição é barata, gostosa e fácil de repetir, ela merece entrar na sua rotina. O plano bom é aquele que você consegue executar.</p></div>
+    <div class="footer"><span>Projeto Corpo Novo</span><span>Extras</span></div>
+  </section>
+
+  <section class="page divider">
+    <div>
+      <div class="divider-num">03</div>
+      <span class="dark-badge">Planner Fitness 21 Dias</span>
+      <h2>Acompanhe hábitos simples e veja sua rotina ganhar forma.</h2>
+      <p>Marque todos os dias. Se falhar, volte no dia seguinte. Consistência nasce da retomada.</p>
+    </div>
+  </section>
+
+  <section class="page tight">
+    <div class="page-title-row">
+      <div><span class="badge">Semana 1</span><h2>Organizar o básico</h2></div>
+      <div class="page-number">14</div>
+    </div>
+    <table class="planner-table">
+      <thead><tr><th>Dia</th><th>Foco</th><th>Água</th><th>Refeições</th><th>Movimento</th><th>Observação</th></tr></thead>
+      <tbody>
+        <tr><td>01</td><td>Definir horários principais</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>02</td><td>Preparar uma receita base</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>03</td><td>Adicionar salada ou legumes</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>04</td><td>Evitar pedido por impulso</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>05</td><td>Organizar lanche simples</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>06</td><td>Fazer caminhada ou treino leve</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>07</td><td>Revisar o que funcionou</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+      </tbody>
+    </table>
+    <div class="note" style="margin-top: 6mm;">Vitória da semana: ________________________________________________________________</div>
+    <div class="footer"><span>Projeto Corpo Novo</span><span>Planner semana 1</span></div>
+  </section>
+
+  <section class="page tight">
+    <div class="page-title-row">
+      <div><span class="badge">Semana 2</span><h2>Repetir o que funciona</h2></div>
+      <div class="page-number">15</div>
+    </div>
+    <table class="planner-table">
+      <thead><tr><th>Dia</th><th>Foco</th><th>Água</th><th>Refeições</th><th>Movimento</th><th>Observação</th></tr></thead>
+      <tbody>
+        <tr><td>08</td><td>Montar compras da semana</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>09</td><td>Repetir café favorito</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>10</td><td>Preparar duas marmitas</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>11</td><td>Comer fruta no lanche</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>12</td><td>Reduzir beliscos sem plano</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>13</td><td>Fazer jantar em casa</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>14</td><td>Revisar economia da semana</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+      </tbody>
+    </table>
+    <div class="note" style="margin-top: 6mm;">Refeição que quero repetir: ______________________________________________________</div>
+    <div class="footer"><span>Projeto Corpo Novo</span><span>Planner semana 2</span></div>
+  </section>
+
+  <section class="page tight">
+    <div class="page-title-row">
+      <div><span class="badge">Semana 3</span><h2>Manter e ajustar</h2></div>
+      <div class="page-number">16</div>
+    </div>
+    <table class="planner-table">
+      <thead><tr><th>Dia</th><th>Foco</th><th>Água</th><th>Refeições</th><th>Movimento</th><th>Observação</th></tr></thead>
+      <tbody>
+        <tr><td>15</td><td>Escolher receitas da próxima semana</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>16</td><td>Preparar legumes lavados</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>17</td><td>Manter uma refeição âncora</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>18</td><td>Fazer 15 minutos de movimento</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>19</td><td>Evitar compras sem lista</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>20</td><td>Repetir cardápio que funcionou</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+        <tr><td>21</td><td>Celebrar constância e planejar novo ciclo</td><td class="check">□</td><td class="check">□</td><td class="check">□</td><td></td></tr>
+      </tbody>
+    </table>
+    <div class="footer"><span>Projeto Corpo Novo</span><span>Planner semana 3</span></div>
+  </section>
+
+  <section class="page">
+    <div class="page-title-row">
+      <div><span class="badge">Movimento em casa</span><h2>Treinos leves para começar</h2><p class="lead">Escolha uma opção e faça no seu ritmo. Pare se sentir dor ou mal-estar.</p></div>
+      <div class="page-number">17</div>
+    </div>
+    <div class="movement-list">
+      <div class="card"><h3>Opção A</h3><p>3 voltas: 12 agachamentos, 10 flexões adaptadas, 20 polichinelos leves.</p></div>
+      <div class="card"><h3>Opção B</h3><p>15 a 25 minutos de caminhada, dança, escada leve ou alongamento ativo.</p></div>
+      <div class="card"><h3>Opção C</h3><p>3 voltas: 20 segundos de prancha, 12 avanços alternados, 15 elevações de quadril.</p></div>
+    </div>
+    <h3 style="margin-top: 8mm;">Controle rápido de 21 dias</h3>
+    <div class="habit-grid">
+      <div class="habit-day"><strong>Dia 1</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 2</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 3</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 4</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 5</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 6</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 7</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 8</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 9</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 10</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 11</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 12</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 13</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 14</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 15</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 16</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 17</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 18</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 19</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 20</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+      <div class="habit-day"><strong>Dia 21</strong><span>Água □</span><span>Comida □</span><span>Movimento □</span></div>
+    </div>
+    <div class="footer"><span>Projeto Corpo Novo</span><span>Movimento</span></div>
+  </section>
+
+  <section class="page back-cover">
+    <div>
+      <span class="dark-badge">Fechamento</span>
+      <h2>Comece pequeno. Repita o básico. Continue.</h2>
+      <p>O corpo novo começa quando sua rotina deixa de depender de motivação e passa a ter um plano simples.</p>
+      <div class="grid-3" style="margin-top: 10mm; text-align: left;">
+        <div class="cover-card"><strong>Hoje</strong><span>Escolha uma receita e prepare uma base.</span></div>
+        <div class="cover-card"><strong>Esta semana</strong><span>Use a lista de compras e siga o cardápio.</span></div>
+        <div class="cover-card"><strong>21 dias</strong><span>Marque seus hábitos e ajuste o que funciona.</span></div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+

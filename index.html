@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projeto Corpo Novo: ebook de receitas fitness baratas com planner fitness de 21 dias, lista de compras econômica e cardápio simples por R$ 19,99.">
+  <meta property="og:title" content="Projeto Corpo Novo | Receitas Fitness Baratas">
+  <meta property="og:description" content="Coma melhor, organize sua rotina e comece uma vida mais saudável gastando pouco. Produto 100% digital por R$ 19,99.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/projeto-corpo-novo-hero.png">
+  <title>Projeto Corpo Novo | Receitas Fitness Baratas + Planner 21 Dias</title>
+  <script>document.documentElement.classList.add("js");</script>
+  <style>
+    :root {
+      --cream: #fffaf3;
+      --mint: #e8fff3;
+      --green: #1fbf75;
+      --green-dark: #0a6b45;
+      --teal: #0fa3b1;
+      --coral: #ff5a5f;
+      --yellow: #f9c74f;
+      --ink: #17231d;
+      --muted: #657269;
+      --white: #ffffff;
+      --line: rgba(23, 35, 29, 0.12);
+      --shadow: 0 24px 70px rgba(25, 55, 42, 0.18);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img,
+    svg {
+      display: block;
+    }
+
+    .wrap {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.26);
+      background: rgba(255, 250, 243, 0.84);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-weight: 950;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, var(--green), var(--teal));
+      color: var(--white);
+      font-size: 0.82rem;
+      font-weight: 950;
+      box-shadow: 0 12px 28px rgba(31, 191, 117, 0.22);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 800;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: var(--green-dark);
+    }
+
+    .nav-cta,
+    .btn-primary,
+    .btn-secondary {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: var(--radius);
+      font-weight: 950;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .nav-cta,
+    .btn-primary {
+      background: linear-gradient(135deg, var(--coral), #ff7a3d 54%, var(--yellow));
+      color: #23130e;
+      box-shadow: 0 16px 36px rgba(255, 90, 95, 0.26);
+    }
+
+    .nav-cta {
+      padding: 0 18px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      padding: 0 24px;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.48);
+      background: rgba(255, 255, 255, 0.16);
+      color: var(--white);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-cta:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 42px rgba(255, 90, 95, 0.3);
+    }
+
+    .icon-svg {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+      stroke: currentColor;
+      stroke-width: 2.4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      min-height: auto;
+      display: grid;
+      align-items: center;
+      padding: clamp(48px, 6vw, 72px) 0 34px;
+      overflow: hidden;
+      background: #14221a;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center right;
+      transform: scale(1.02);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(9, 30, 20, 0.9) 0%, rgba(9, 30, 20, 0.72) 44%, rgba(9, 30, 20, 0.28) 100%),
+        linear-gradient(180deg, rgba(12, 84, 55, 0.08), rgba(12, 84, 55, 0.7));
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      height: 38%;
+      background: linear-gradient(180deg, transparent, rgba(255, 250, 243, 0.18));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: minmax(0, 0.98fr) minmax(300px, 0.68fr);
+      gap: clamp(28px, 5vw, 64px);
+      align-items: center;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      color: var(--white);
+    }
+
+    .eyebrow {
+      margin: 0 0 13px;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .hero .eyebrow {
+      color: #9dffd0;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin-bottom: 20px;
+      font-size: clamp(2.55rem, 5.5vw, 4.7rem);
+      line-height: 0.96;
+      letter-spacing: 0;
+      overflow-wrap: break-word;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1.04;
+      letter-spacing: 0;
+      overflow-wrap: break-word;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+      line-height: 1.25;
+    }
+
+    p {
+      color: var(--muted);
+      overflow-wrap: break-word;
+    }
+
+    .hero-subtitle {
+      max-width: 640px;
+      margin-bottom: 24px;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 1.12rem;
+    }
+
+    .hero-price {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 12px;
+      margin: 0 0 24px;
+    }
+
+    .hero-price span {
+      color: rgba(255, 255, 255, 0.74);
+      font-weight: 850;
+    }
+
+    .hero-price strong {
+      color: var(--yellow);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1;
+      font-weight: 950;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .cta-note {
+      margin: 0 0 24px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.95rem;
+      font-weight: 750;
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-proof span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.11);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.88rem;
+      font-weight: 850;
+      backdrop-filter: blur(10px);
+    }
+
+    .product-stage {
+      position: relative;
+      min-height: 470px;
+      display: grid;
+      place-items: center;
+    }
+
+    .mockup-stack {
+      position: relative;
+      width: min(390px, 100%);
+      min-height: 430px;
+    }
+
+    .ebook-cover,
+    .planner-cover,
+    .phone-mockup {
+      position: absolute;
+      border-radius: var(--radius);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32);
+    }
+
+    .ebook-cover {
+      left: 22px;
+      top: 6px;
+      z-index: 3;
+      width: 250px;
+      min-height: 342px;
+      padding: 28px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.36);
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.22), transparent 32%),
+        linear-gradient(160deg, #11251b 0%, #1fbf75 52%, #ff5a5f 100%);
+      color: var(--white);
+      transform: rotate(-7deg);
+    }
+
+    .ebook-cover::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 7px;
+      pointer-events: none;
+    }
+
+    .mock-label {
+      display: inline-flex;
+      margin-bottom: 58px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .ebook-title {
+      position: relative;
+      z-index: 1;
+      max-width: 170px;
+      font-size: 2.08rem;
+      font-weight: 950;
+      line-height: 0.98;
+    }
+
+    .ebook-sub {
+      position: relative;
+      z-index: 1;
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 0.88rem;
+      font-weight: 750;
+    }
+
+    .planner-cover {
+      right: 12px;
+      top: 94px;
+      z-index: 2;
+      width: 210px;
+      min-height: 284px;
+      padding: 24px 20px;
+      border: 1px solid rgba(23, 35, 29, 0.08);
+      background: var(--white);
+      color: var(--ink);
+      transform: rotate(5deg);
+    }
+
+    .planner-cover h3 {
+      margin: 0 0 18px;
+      color: var(--green-dark);
+      font-size: 1.25rem;
+      font-weight: 950;
+    }
+
+    .planner-lines {
+      display: grid;
+      gap: 10px;
+    }
+
+    .planner-lines span {
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(31, 191, 117, 0.22), rgba(255, 90, 95, 0.2));
+    }
+
+    .phone-mockup {
+      left: 116px;
+      bottom: 8px;
+      z-index: 4;
+      width: 178px;
+      min-height: 244px;
+      padding: 13px;
+      border: 6px solid #17231d;
+      background: #17231d;
+      transform: rotate(2deg);
+    }
+
+    .phone-screen {
+      min-height: 206px;
+      padding: 16px 14px;
+      border-radius: 6px;
+      background: linear-gradient(180deg, #f4fff8, #ffffff);
+    }
+
+    .phone-screen strong {
+      display: block;
+      color: var(--green-dark);
+      font-size: 0.85rem;
+      line-height: 1.15;
+    }
+
+    .phone-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .phone-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--green), var(--yellow));
+      flex: 0 0 auto;
+    }
+
+    section {
+      padding: clamp(66px, 8vw, 104px) 0;
+    }
+
+    .intro-strip {
+      padding: 18px 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .strip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .strip-item {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .strip-icon,
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(31, 191, 117, 0.16), rgba(255, 90, 95, 0.13));
+      color: var(--green-dark);
+      flex: 0 0 auto;
+    }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 34px;
+    }
+
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .section-head p {
+      font-size: 1.05rem;
+    }
+
+    .receive-grid,
+    .bonus-grid,
+    .benefit-grid,
+    .faq-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .receive-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .bonus-grid,
+    .benefit-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card,
+    .bonus-card,
+    .benefit-card,
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 18px 48px rgba(25, 55, 42, 0.1);
+    }
+
+    .card,
+    .bonus-card,
+    .benefit-card {
+      padding: 24px;
+    }
+
+    .card {
+      min-height: 248px;
+    }
+
+    .card p,
+    .bonus-card p,
+    .benefit-card p,
+    .faq-item p {
+      margin-bottom: 0;
+    }
+
+    .section-tint {
+      background:
+        radial-gradient(circle at 12% 10%, rgba(31, 191, 117, 0.18), transparent 34%),
+        linear-gradient(180deg, #f5fff9 0%, #fffaf3 100%);
+    }
+
+    .bonus-card {
+      position: relative;
+      min-height: 220px;
+      overflow: hidden;
+    }
+
+    .bonus-card::after {
+      content: "";
+      position: absolute;
+      right: -42px;
+      bottom: -52px;
+      width: 140px;
+      height: 140px;
+      border-radius: 999px;
+      background: rgba(249, 199, 79, 0.24);
+      pointer-events: none;
+    }
+
+    .bonus-tag {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 90, 95, 0.12);
+      color: #ad3135;
+      font-size: 0.72rem;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .image-split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1fr);
+      gap: clamp(30px, 6vw, 72px);
+      align-items: center;
+    }
+
+    .image-panel {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .image-panel img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+    }
+
+    .floating-note {
+      position: absolute;
+      left: 22px;
+      bottom: 22px;
+      width: min(280px, calc(100% - 44px));
+      padding: 18px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 18px 48px rgba(25, 55, 42, 0.16);
+      backdrop-filter: blur(12px);
+    }
+
+    .floating-note strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--green-dark);
+      font-size: 1.1rem;
+    }
+
+    .floating-note p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .audience-list {
+      display: grid;
+      gap: 12px;
+      margin: 26px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .audience-list li {
+      position: relative;
+      padding: 16px 16px 16px 46px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--ink);
+      font-weight: 850;
+    }
+
+    .audience-list li::before {
+      content: "";
+      position: absolute;
+      left: 16px;
+      top: 20px;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--green), var(--teal));
+      box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.64);
+    }
+
+    .method {
+      background:
+        linear-gradient(135deg, rgba(15, 163, 177, 0.12), rgba(255, 90, 95, 0.1)),
+        #14231b;
+      color: var(--white);
+    }
+
+    .method p {
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .method .eyebrow {
+      color: #9dffd0;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .step {
+      padding: 26px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 22px 54px rgba(0, 0, 0, 0.14);
+    }
+
+    .step-num {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, var(--green), var(--yellow));
+      color: #132019;
+      font-weight: 950;
+    }
+
+    .step h3,
+    .method h2 {
+      color: var(--white);
+    }
+
+    .benefit-card {
+      min-height: 190px;
+    }
+
+    .benefit-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .benefit-card h3 {
+      font-size: 1rem;
+    }
+
+    .offer {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(31, 191, 117, 0.14), rgba(255, 90, 95, 0.14)),
+        var(--white);
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 390px);
+      gap: clamp(28px, 5vw, 58px);
+      align-items: center;
+    }
+
+    .offer-copy {
+      max-width: 720px;
+    }
+
+    .price-box {
+      padding: 30px;
+      border: 1px solid rgba(31, 191, 117, 0.2);
+      border-radius: var(--radius);
+      background: #14231b;
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .price-box p {
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .old-price {
+      display: inline-block;
+      margin-bottom: 7px;
+      color: rgba(255, 255, 255, 0.48);
+      font-weight: 900;
+      text-decoration: line-through;
+    }
+
+    .price {
+      margin-bottom: 18px;
+      color: var(--yellow);
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      line-height: 0.95;
+      font-weight: 950;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 12px;
+      margin: 22px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 30px;
+      color: rgba(255, 255, 255, 0.82);
+      font-weight: 760;
+    }
+
+    .check-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 17px;
+      height: 17px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.72);
+    }
+
+    .price-box .btn-primary {
+      width: 100%;
+      margin-top: 6px;
+    }
+
+    .safe-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 36px;
+    }
+
+    .safe-item {
+      min-height: 168px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .safe-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .faq {
+      background: var(--cream);
+    }
+
+    .faq-grid {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      padding: 24px;
+    }
+
+    .final-cta {
+      position: relative;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(15, 35, 25, 0.94), rgba(15, 35, 25, 0.72)),
+        url("assets/images/projeto-corpo-novo-mealprep.png") center/cover;
+    }
+
+    .final-cta p {
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .final-cta .eyebrow {
+      color: #9dffd0;
+    }
+
+    .final-box {
+      max-width: 760px;
+    }
+
+    .footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+      background: var(--white);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .footer a {
+      color: var(--green-dark);
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 560ms ease, transform 560ms ease;
+    }
+
+    .js .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .nav-cta,
+      .btn-primary,
+      .btn-secondary,
+      .js .reveal {
+        transition: none;
+      }
+    }
+
+    @media (max-width: 1040px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-content,
+      .image-split,
+      .offer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .product-stage {
+        min-height: 430px;
+        place-items: start center;
+      }
+
+      .receive-grid,
+      .benefit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .wrap {
+        width: calc(100vw - 32px);
+      }
+
+      .nav {
+        min-height: 64px;
+      }
+
+      .brand span:last-child {
+        max-width: 132px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .nav-cta {
+        min-height: 42px;
+        padding: 0 13px;
+        font-size: 0.9rem;
+      }
+
+      .hero {
+        padding: 34px 0 18px;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(180deg, rgba(9, 30, 20, 0.92) 0%, rgba(9, 30, 20, 0.78) 60%, rgba(9, 30, 20, 0.44) 100%),
+          linear-gradient(180deg, rgba(12, 84, 55, 0.12), rgba(12, 84, 55, 0.68));
+      }
+
+      .hero-bg {
+        object-position: 68% center;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 10vw, 2.55rem);
+        line-height: 1;
+      }
+
+      h2 {
+        font-size: clamp(1.85rem, 9vw, 2.45rem);
+      }
+
+      .hero-subtitle {
+        font-size: 0.98rem;
+      }
+
+      .hero .hero-proof {
+        display: none;
+      }
+
+      .hero-actions,
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .product-stage {
+        display: none;
+        min-height: 0;
+      }
+
+      .mockup-stack {
+        width: min(328px, 100%);
+        min-height: 340px;
+      }
+
+      .ebook-cover {
+        left: 5px;
+        top: 14px;
+        width: 196px;
+        min-height: 276px;
+        padding: 22px 18px;
+      }
+
+      .mock-label {
+        margin-bottom: 42px;
+        font-size: 0.62rem;
+      }
+
+      .ebook-title {
+        font-size: 1.58rem;
+      }
+
+      .planner-cover {
+        right: 0;
+        top: 92px;
+        width: 164px;
+        min-height: 224px;
+        padding: 19px 16px;
+      }
+
+      .phone-mockup {
+        left: 90px;
+        width: 142px;
+        min-height: 198px;
+        padding: 10px;
+      }
+
+      .phone-screen {
+        min-height: 166px;
+      }
+
+      .strip-grid,
+      .receive-grid,
+      .bonus-grid,
+      .benefit-grid,
+      .steps,
+      .safe-row {
+        grid-template-columns: 1fr;
+      }
+
+      .strip-item {
+        min-height: 48px;
+      }
+
+      section {
+        padding: 58px 0;
+      }
+
+      .image-panel,
+      .image-panel img {
+        min-height: 330px;
+      }
+
+      .floating-note {
+        left: 14px;
+        bottom: 14px;
+        width: calc(100% - 28px);
+      }
+
+      .price-box,
+      .card,
+      .bonus-card,
+      .benefit-card,
+      .safe-item,
+      .faq-item {
+        padding: 22px;
+      }
+
+      .footer .wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#topo" aria-label="Projeto Corpo Novo">
+        <span class="brand-mark">CN</span>
+        <span>Projeto Corpo Novo</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#receber">Conteúdo</a>
+        <a href="#bonus">Bônus</a>
+        <a href="#metodo">Método</a>
+        <a href="#oferta">Oferta</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="nav-cta js-checkout-link" href="https://pay.kiwify.com.br/RQPyQaS">
+        Comprar agora
+        <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="hero" aria-label="Oferta principal">
+      <img class="hero-bg" src="assets/images/projeto-corpo-novo-hero.png" alt="Mulher preparando marmitas saudáveis em uma cozinha moderna">
+      <div class="wrap hero-content">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Receitas fitness baratas + planner 21 dias</p>
+          <h1>Coma melhor, organize sua rotina e comece seu corpo novo sem gastar muito.</h1>
+          <p class="hero-subtitle">Um produto digital completo com receitas econômicas, cardápio simples, lista de compras e um planner de 21 dias para criar uma rotina saudável mesmo começando do zero.</p>
+          <div class="hero-price" aria-label="Preço da oferta">
+            <span>Oferta especial</span>
+            <strong>R$ 19,99</strong>
+          </div>
+          <div class="hero-actions">
+            <a class="btn-primary js-checkout-link" href="https://pay.kiwify.com.br/RQPyQaS">
+              Quero começar agora
+              <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+            </a>
+            <a class="btn-secondary" href="#receber">Ver o que recebo</a>
+          </div>
+          <p class="cta-note">Acesso imediato &bull; Produto 100% digital &bull; Oferta por tempo limitado.</p>
+          <div class="hero-proof" aria-label="Destaques do produto">
+            <span>Sem academia obrigatória</span>
+            <span>Alimentos simples</span>
+            <span>Feito para rotina real</span>
+          </div>
+        </div>
+
+        <div class="product-stage reveal" aria-label="Mockups do produto">
+          <div class="mockup-stack">
+            <div class="ebook-cover">
+              <span class="mock-label">Ebook fitness</span>
+              <div class="ebook-title">Projeto Corpo Novo</div>
+              <p class="ebook-sub">Receitas fitness baratas para comer melhor gastando pouco.</p>
+            </div>
+            <div class="planner-cover">
+              <h3>Planner Fitness 21 Dias</h3>
+              <div class="planner-lines" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <strong>Cardápio simples de 7 dias</strong>
+                <div class="phone-row"><span class="phone-dot"></span><span>Café da manhã</span></div>
+                <div class="phone-row"><span class="phone-dot"></span><span>Almoço prático</span></div>
+                <div class="phone-row"><span class="phone-dot"></span><span>Jantar leve</span></div>
+                <div class="phone-row"><span class="phone-dot"></span><span>Lista econômica</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-strip" aria-label="Resumo rápido">
+      <div class="wrap strip-grid">
+        <div class="strip-item"><span class="strip-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h11"></path><path d="M8 7h7"></path><path d="M8 11h5"></path><path d="M6 21h13a1 1 0 0 0 1-1V7"></path></svg></span>Receitas econômicas</div>
+        <div class="strip-item"><span class="strip-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M3 10h18"></path></svg></span>Planner 21 dias</div>
+        <div class="strip-item"><span class="strip-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg></span>Compras inteligentes</div>
+        <div class="strip-item"><span class="strip-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"></path><path d="M8 8h8"></path><path d="M8 12h8"></path><path d="M8 16h5"></path></svg></span>Cardápio de 7 dias</div>
+      </div>
+    </section>
+
+    <section id="receber">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <p class="eyebrow">O que você vai receber</p>
+          <h2>Uma oferta completa para simplificar sua rotina saudável.</h2>
+          <p>Tudo foi pensado para quem quer começar com alimentos acessíveis, organização simples e menos dúvida na hora de comer melhor.</p>
+        </div>
+        <div class="receive-grid">
+          <article class="card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-1.5Z"></path><path d="M8 7h6"></path><path d="M8 11h7"></path></svg></span>
+            <h3>Ebook de receitas fitness baratas</h3>
+            <p>Ideias simples para montar refeições mais saudáveis usando ingredientes fáceis de encontrar no mercado.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path></svg></span>
+            <h3>Planner fitness de 21 dias</h3>
+            <p>Um plano visual para acompanhar hábitos, refeições, treinos leves e evolução diária sem complicação.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M7 11h10"></path><path d="M7 15h7"></path></svg></span>
+            <h3>Lista de compras econômica</h3>
+            <p>Uma seleção objetiva de alimentos versáteis para comprar melhor e evitar desperdício durante a semana.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"></path><path d="M8 8h8"></path><path d="M8 12h8"></path><path d="M8 16h5"></path></svg></span>
+            <h3>Cardápio simples de 7 dias</h3>
+            <p>Sugestões práticas para café da manhã, almoço, jantar e lanches usando combinações realistas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="bonus" class="section-tint">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <p class="eyebrow">Bônus inclusos</p>
+          <h2>Você recebe mais do que um ebook.</h2>
+          <p>A ideia é deixar você com o caminho pronto: o que comprar, o que preparar e como manter a disciplina nos primeiros 21 dias.</p>
+        </div>
+        <div class="bonus-grid">
+          <article class="bonus-card reveal">
+            <span class="bonus-tag">Bônus 01</span>
+            <h3>Planner Fitness 21 Dias</h3>
+            <p>Para marcar água, refeições, movimento diário, sono e pequenas metas, criando constância sem pressão.</p>
+          </article>
+          <article class="bonus-card reveal">
+            <span class="bonus-tag">Bônus 02</span>
+            <h3>Lista de Compras Econômica</h3>
+            <p>Para ir ao mercado com foco e escolher alimentos que rendem várias combinações saudáveis.</p>
+          </article>
+          <article class="bonus-card reveal">
+            <span class="bonus-tag">Bônus 03</span>
+            <h3>Cardápio Simples de 7 Dias</h3>
+            <p>Para não travar na hora de decidir o que comer e manter a rotina mesmo nos dias corridos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="para-quem">
+      <div class="wrap image-split">
+        <div class="reveal">
+          <p class="eyebrow">Para quem é este guia</p>
+          <h2>Feito para quem quer começar com leveza, sem gastar muito e sem depender de academia.</h2>
+          <p>O guia combina alimentação prática, organização de rotina e movimento simples para quem precisa de um começo claro, realista e econômico.</p>
+          <ul class="audience-list">
+            <li>Quem quer comer melhor, mas acha comida fitness cara</li>
+            <li>Quem sente falta de disciplina e precisa de um plano curto</li>
+            <li>Quem trabalha, estuda ou cuida da casa e tem pouco tempo</li>
+            <li>Quem prefere começar em casa antes de pagar academia</li>
+            <li>Quem quer organizar marmitas, compras e cardápio da semana</li>
+          </ul>
+        </div>
+        <div class="image-panel reveal">
+          <img src="assets/images/projeto-corpo-novo-mealprep.png" alt="Marmitas saudáveis e ingredientes econômicos organizados na cozinha">
+          <div class="floating-note">
+            <strong>Rotina real</strong>
+            <p>Ingredientes simples, preparo prático e organização para repetir durante a semana.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="metodo" class="method">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <p class="eyebrow">Método simples em 3 passos</p>
+          <h2>Você não precisa mudar tudo de uma vez.</h2>
+          <p>O foco é começar pequeno, criar repetição e deixar a rotina mais fácil de seguir.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-num">01</span>
+            <h3>Escolha refeições baratas</h3>
+            <p>Use a lista econômica para montar uma base simples de proteínas, carboidratos, legumes e lanches.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">02</span>
+            <h3>Organize seus 21 dias</h3>
+            <p>Acompanhe hábitos essenciais no planner e transforme intenção em rotina diária.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">03</span>
+            <h3>Repita o que funciona</h3>
+            <p>Com o cardápio de 7 dias, você reduz decisões e mantém consistência sem complicar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios" class="section-tint">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <p class="eyebrow">Benefícios principais</p>
+          <h2>Mais clareza para cuidar de você todos os dias.</h2>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit-card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1v22"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"></path></svg></span>
+            <h3>Comer melhor gastando pouco</h3>
+            <p>Com opções acessíveis e fáceis de repetir.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="m7 15 4-4 3 3 5-7"></path></svg></span>
+            <h3>Criar uma rotina saudável</h3>
+            <p>Com passos pequenos e possíveis de manter.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+            <h3>Ter mais disciplina</h3>
+            <p>Com acompanhamento visual por 21 dias.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5 17.5 17.5"></path><path d="M17.5 6.5 6.5 17.5"></path><circle cx="12" cy="12" r="9"></circle></svg></span>
+            <h3>Começar sem academia</h3>
+            <p>Com foco em hábitos e movimentos simples.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></span>
+            <h3>Organizar alimentação e treino</h3>
+            <p>Com cardápio, planner e lista de compras juntos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="oferta" class="offer">
+      <div class="wrap offer-grid">
+        <div class="offer-copy reveal">
+          <p class="eyebrow">Oferta especial</p>
+          <h2>Leve o pacote completo por apenas R$ 19,99.</h2>
+          <p>Você recebe o ebook principal e todos os bônus em formato digital, com acesso liberado após a confirmação do pagamento.</p>
+          <div class="hero-proof" aria-label="Resumo da oferta">
+            <span style="color: var(--green-dark); background: rgba(31,191,117,0.12); border-color: rgba(31,191,117,0.25);">Ebook + planner</span>
+            <span style="color: var(--green-dark); background: rgba(31,191,117,0.12); border-color: rgba(31,191,117,0.25);">Pagamento único</span>
+            <span style="color: var(--green-dark); background: rgba(31,191,117,0.12); border-color: rgba(31,191,117,0.25);">Entrega digital</span>
+          </div>
+        </div>
+        <aside class="price-box reveal" aria-label="Preço e compra">
+          <p class="eyebrow">Hoje por tempo limitado</p>
+          <span class="old-price">Valor normal R$ 47,00</span>
+          <div class="price">R$ 19,99</div>
+          <p>Projeto Corpo Novo: Receitas Fitness Baratas + Rotina Saudável de 21 Dias.</p>
+          <ul class="check-list">
+            <li>Ebook de receitas fitness baratas</li>
+            <li>Planner Fitness 21 Dias</li>
+            <li>Lista de Compras Econômica</li>
+            <li>Cardápio Simples de 7 Dias</li>
+          </ul>
+          <a class="btn-primary js-checkout-link" href="https://pay.kiwify.com.br/RQPyQaS">
+            Quero começar agora
+            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+          </a>
+          <p class="cta-note" style="margin-top: 12px; margin-bottom: 0;">Acesso imediato &bull; Produto 100% digital.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="seguranca">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <p class="eyebrow">Garantia e segurança</p>
+          <h2>Compra simples, segura e com acesso digital.</h2>
+          <p>O pagamento é processado pela Kiwify. Após a confirmação, você recebe as instruções de acesso no e-mail usado na compra.</p>
+        </div>
+        <div class="safe-row">
+          <article class="safe-item reveal">
+            <strong>Pagamento seguro</strong>
+            <p>Checkout protegido pela plataforma de pagamento, sem precisar enviar comprovantes manualmente.</p>
+          </article>
+          <article class="safe-item reveal">
+            <strong>Acesso imediato</strong>
+            <p>Produto digital liberado após a confirmação da compra, ideal para começar ainda hoje.</p>
+          </article>
+          <article class="safe-item reveal">
+            <strong>Produto educativo</strong>
+            <p>Conteúdo prático para organização de rotina. Não substitui orientação médica, nutricional ou profissional.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <p class="eyebrow">Perguntas frequentes</p>
+          <h2>Dúvidas rápidas antes de começar.</h2>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-item reveal">
+            <h3>O produto é físico?</h3>
+            <p>Não. É um produto 100% digital, com acesso online após a confirmação da compra.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>Preciso de academia para usar?</h3>
+            <p>Não. O foco é organização alimentar, rotina saudável e começo simples em casa.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>As receitas usam ingredientes caros?</h3>
+            <p>A proposta é justamente usar alimentos comuns e econômicos para facilitar a rotina.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>Recebo o acesso na hora?</h3>
+            <p>O acesso é liberado após a confirmação do pagamento pela Kiwify e enviado para o e-mail da compra.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>O guia promete emagrecimento?</h3>
+            <p>Não. O material ajuda na organização de hábitos, alimentação e rotina. Resultados variam de pessoa para pessoa.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>Posso comprar pelo celular?</h3>
+            <p>Sim. A página e o checkout foram preparados para celular e computador.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="wrap final-box reveal">
+        <p class="eyebrow">Comece com um plano simples</p>
+        <h2>Seu primeiro passo saudável pode custar menos que uma refeição fora.</h2>
+        <p>Receba o pacote digital completo por R$ 19,99 e organize os próximos 21 dias com receitas, compras e cardápio no mesmo lugar.</p>
+        <div class="hero-actions">
+          <a class="btn-primary js-checkout-link" href="https://pay.kiwify.com.br/RQPyQaS">
+            Quero começar agora
+            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+          </a>
+          <a class="btn-secondary" href="#receber">Rever conteúdo</a>
+        </div>
+        <p class="cta-note">Acesso imediato &bull; Produto 100% digital &bull; Oferta por tempo limitado.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© 2026 Projeto Corpo Novo. Produto digital educativo.</span>
+      <a class="js-checkout-link" href="https://pay.kiwify.com.br/RQPyQaS">Comprar por R$ 19,99</a>
+    </div>
+  </footer>
+
+  <script>
+    const checkoutLinks = document.querySelectorAll(".js-checkout-link");
+    const params = new URLSearchParams(window.location.search);
+
+    if ([...params].length) {
+      checkoutLinks.forEach((link) => {
+        const url = new URL(link.href);
+        params.forEach((value, key) => url.searchParams.set(key, value));
+        link.href = url.toString();
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>
