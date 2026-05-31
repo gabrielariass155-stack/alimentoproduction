@@ -3,13 +3,14 @@
 Site estatico de venda para o produto digital **Projeto Corpo Novo: Receitas Fitness Baratas + Rotina Saudavel de 21 Dias**.
 
 Preco da oferta: **R$ 19,99**  
-Checkout oficial: **https://pay.kiwify.com.br/RQPyQaS**
+Checkout oficial: **https://pay.kiwify.com.br/4eS40pf**
 
 ## Estrutura
 
 ```text
 .
 |-- index.html
+|-- acougueiro.html
 |-- checkout.html
 |-- gracias.html
 |-- assets/
@@ -17,8 +18,16 @@ Checkout oficial: **https://pay.kiwify.com.br/RQPyQaS**
 |   |   `-- style.css
 |   |-- js/
 |   |   `-- script.js
+|   |-- acougueiro/
+|   |   |-- FONTES_IMAGENS.md
+|   |   |-- hero-acougue.jpg
+|   |   |-- picanha.jpg
+|   |   |-- file-mignon.jpg
+|   |   |-- contrafile.jpg
+|   |   `-- outras imagens de cortes e acougue
 |   `-- images/
 |       |-- favicon.svg
+|       |-- manual-acougueiro-hero.svg
 |       |-- projeto-corpo-novo-hero.png
 |       `-- projeto-corpo-novo-mealprep.png
 `-- produto-digital/
@@ -30,6 +39,7 @@ Checkout oficial: **https://pay.kiwify.com.br/RQPyQaS**
 ## Paginas
 
 - `index.html`: pagina principal de vendas.
+- `acougueiro.html`: pagina de venda do Manual Acougueiro Lucrativo.
 - `checkout.html`: resumo visual antes de enviar para a Kiwify.
 - `gracias.html`: pagina de obrigado/acesso.
 
