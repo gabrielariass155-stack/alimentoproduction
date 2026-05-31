@@ -3,94 +3,364 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; url=projeto-corpo-novo-produto-completo.html">
-  <link rel="canonical" href="projeto-corpo-novo-produto-completo.html">
-  <title>Projeto Corpo Novo | Produto Digital</title>
-  <style>
-    :root {
-      --green: #1fbf75;
-      --green-dark: #0a6b45;
-      --cream: #fffaf3;
-      --ink: #17231d;
-      --muted: #657269;
-      --line: rgba(23, 35, 29, 0.12);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      margin: 0;
-      padding: 24px;
-      background: linear-gradient(135deg, rgba(31, 191, 117, 0.16), rgba(255, 90, 95, 0.08)), var(--cream);
-      color: var(--ink);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      line-height: 1.55;
-    }
-
-    main {
-      width: min(620px, 100%);
-      padding: 32px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.92);
-      box-shadow: 0 24px 70px rgba(25, 55, 42, 0.14);
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0 0 10px;
-      font-size: clamp(2rem, 8vw, 3rem);
-      line-height: 1.02;
-    }
-
-    p {
-      margin: 0 0 22px;
-      color: var(--muted);
-    }
-
-    .actions {
-      display: grid;
-      gap: 12px;
-    }
-
-    a {
-      min-height: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 8px;
-      font-weight: 900;
-      text-decoration: none;
-    }
-
-    .primary {
-      background: linear-gradient(135deg, var(--green), #0fa3b1);
-      color: #ffffff;
-    }
-
-    .secondary {
-      border: 1px solid var(--line);
-      color: var(--green-dark);
-      background: rgba(31, 191, 117, 0.08);
-    }
-  </style>
-  <script>
-    window.location.replace("projeto-corpo-novo-produto-completo.html" + window.location.search + window.location.hash);
-  </script>
+  <meta name="description" content="Projeto Corpo Novo: ebook de receitas fitness baratas com planner fitness de 21 dias, lista de compras econômica e cardápio simples por R$ 19,99.">
+  <meta property="og:title" content="Projeto Corpo Novo | Receitas Fitness Baratas">
+  <meta property="og:description" content="Coma melhor, organize sua rotina e comece uma vida mais saudável gastando pouco. Produto 100% digital por R$ 19,99.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/projeto-corpo-novo-hero.png">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <title>Projeto Corpo Novo | Receitas Fitness Baratas + Planner 21 Dias</title>
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/script.js"></script>
 </head>
-<body>
-  <main>
-    <h1>Projeto Corpo Novo</h1>
-    <p>Redirecionando para o produto digital completo...</p>
-    <div class="actions">
-      <a class="primary" href="projeto-corpo-novo-produto-completo.html">Abrir produto digital</a>
-      <a class="secondary" href="Projeto-Corpo-Novo-Produto-Digital-Completo.pdf">Abrir PDF</a>
+<body class="page-index">
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#topo" aria-label="Projeto Corpo Novo">
+        <span class="brand-mark">CN</span>
+        <span>Projeto Corpo Novo</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#receber">Conteúdo</a>
+        <a href="#bonus">Bônus</a>
+        <a href="#metodo">Método</a>
+        <a href="#oferta">Oferta</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="nav-cta js-checkout-link" href="https://pay.kiwify.com.br/RQPyQaS">
+        Comprar agora
+        <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+      </a>
     </div>
+  </header>
+
+  <main id="topo">
+    <section class="hero" aria-label="Oferta principal">
+      <img class="hero-bg" src="assets/images/projeto-corpo-novo-hero.png" alt="Mulher preparando marmitas saudáveis em uma cozinha moderna">
+      <div class="wrap hero-content">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Receitas fitness baratas + planner 21 dias</p>
+          <h1>Coma melhor, organize sua rotina e comece seu corpo novo sem gastar muito.</h1>
+          <p class="hero-subtitle">Um produto digital completo com receitas econômicas, cardápio simples, lista de compras e um planner de 21 dias para criar uma rotina saudável mesmo começando do zero.</p>
+          <div class="hero-price" aria-label="Preço da oferta">
+            <span>Oferta especial</span>
+            <strong>R$ 19,99</strong>
+          </div>
+          <div class="hero-actions">
+            <a class="btn-primary js-checkout-link" href="https://pay.kiwify.com.br/RQPyQaS">
+              Quero começar agora
+              <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+            </a>
+            <a class="btn-secondary" href="#receber">Ver o que recebo</a>
+          </div>
+          <p class="cta-note">Acesso imediato &bull; Produto 100% digital &bull; Oferta por tempo limitado.</p>
+          <div class="hero-proof" aria-label="Destaques do produto">
+            <span>Sem academia obrigatória</span>
+            <span>Alimentos simples</span>
+            <span>Feito para rotina real</span>
+          </div>
+        </div>
+
+        <div class="product-stage reveal" aria-label="Mockups do produto">
+          <div class="mockup-stack">
+            <div class="ebook-cover">
+              <span class="mock-label">Ebook fitness</span>
+              <div class="ebook-title">Projeto Corpo Novo</div>
+              <p class="ebook-sub">Receitas fitness baratas para comer melhor gastando pouco.</p>
+            </div>
+            <div class="planner-cover">
+              <h3>Planner Fitness 21 Dias</h3>
+              <div class="planner-lines" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <strong>Cardápio simples de 7 dias</strong>
+                <div class="phone-row"><span class="phone-dot"></span><span>Café da manhã</span></div>
+                <div class="phone-row"><span class="phone-dot"></span><span>Almoço prático</span></div>
+                <div class="phone-row"><span class="phone-dot"></span><span>Jantar leve</span></div>
+                <div class="phone-row"><span class="phone-dot"></span><span>Lista econômica</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-strip" aria-label="Resumo rápido">
+      <div class="wrap strip-grid">
+        <div class="strip-item"><span class="strip-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h11"></path><path d="M8 7h7"></path><path d="M8 11h5"></path><path d="M6 21h13a1 1 0 0 0 1-1V7"></path></svg></span>Receitas econômicas</div>
+        <div class="strip-item"><span class="strip-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M3 10h18"></path></svg></span>Planner 21 dias</div>
+        <div class="strip-item"><span class="strip-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg></span>Compras inteligentes</div>
+        <div class="strip-item"><span class="strip-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"></path><path d="M8 8h8"></path><path d="M8 12h8"></path><path d="M8 16h5"></path></svg></span>Cardápio de 7 dias</div>
+      </div>
+    </section>
+
+    <section id="receber">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <p class="eyebrow">O que você vai receber</p>
+          <h2>Uma oferta completa para simplificar sua rotina saudável.</h2>
+          <p>Tudo foi pensado para quem quer começar com alimentos acessíveis, organização simples e menos dúvida na hora de comer melhor.</p>
+        </div>
+        <div class="receive-grid">
+          <article class="card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-1.5Z"></path><path d="M8 7h6"></path><path d="M8 11h7"></path></svg></span>
+            <h3>Ebook de receitas fitness baratas</h3>
+            <p>Ideias simples para montar refeições mais saudáveis usando ingredientes fáceis de encontrar no mercado.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path></svg></span>
+            <h3>Planner fitness de 21 dias</h3>
+            <p>Um plano visual para acompanhar hábitos, refeições, treinos leves e evolução diária sem complicação.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M7 11h10"></path><path d="M7 15h7"></path></svg></span>
+            <h3>Lista de compras econômica</h3>
+            <p>Uma seleção objetiva de alimentos versáteis para comprar melhor e evitar desperdício durante a semana.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"></path><path d="M8 8h8"></path><path d="M8 12h8"></path><path d="M8 16h5"></path></svg></span>
+            <h3>Cardápio simples de 7 dias</h3>
+            <p>Sugestões práticas para café da manhã, almoço, jantar e lanches usando combinações realistas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="bonus" class="section-tint">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <p class="eyebrow">Bônus inclusos</p>
+          <h2>Você recebe mais do que um ebook.</h2>
+          <p>A ideia é deixar você com o caminho pronto: o que comprar, o que preparar e como manter a disciplina nos primeiros 21 dias.</p>
+        </div>
+        <div class="bonus-grid">
+          <article class="bonus-card reveal">
+            <span class="bonus-tag">Bônus 01</span>
+            <h3>Planner Fitness 21 Dias</h3>
+            <p>Para marcar água, refeições, movimento diário, sono e pequenas metas, criando constância sem pressão.</p>
+          </article>
+          <article class="bonus-card reveal">
+            <span class="bonus-tag">Bônus 02</span>
+            <h3>Lista de Compras Econômica</h3>
+            <p>Para ir ao mercado com foco e escolher alimentos que rendem várias combinações saudáveis.</p>
+          </article>
+          <article class="bonus-card reveal">
+            <span class="bonus-tag">Bônus 03</span>
+            <h3>Cardápio Simples de 7 Dias</h3>
+            <p>Para não travar na hora de decidir o que comer e manter a rotina mesmo nos dias corridos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="para-quem">
+      <div class="wrap image-split">
+        <div class="reveal">
+          <p class="eyebrow">Para quem é este guia</p>
+          <h2>Feito para quem quer começar com leveza, sem gastar muito e sem depender de academia.</h2>
+          <p>O guia combina alimentação prática, organização de rotina e movimento simples para quem precisa de um começo claro, realista e econômico.</p>
+          <ul class="audience-list">
+            <li>Quem quer comer melhor, mas acha comida fitness cara</li>
+            <li>Quem sente falta de disciplina e precisa de um plano curto</li>
+            <li>Quem trabalha, estuda ou cuida da casa e tem pouco tempo</li>
+            <li>Quem prefere começar em casa antes de pagar academia</li>
+            <li>Quem quer organizar marmitas, compras e cardápio da semana</li>
+          </ul>
+        </div>
+        <div class="image-panel reveal">
+          <img src="assets/images/projeto-corpo-novo-mealprep.png" alt="Marmitas saudáveis e ingredientes econômicos organizados na cozinha">
+          <div class="floating-note">
+            <strong>Rotina real</strong>
+            <p>Ingredientes simples, preparo prático e organização para repetir durante a semana.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="metodo" class="method">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <p class="eyebrow">Método simples em 3 passos</p>
+          <h2>Você não precisa mudar tudo de uma vez.</h2>
+          <p>O foco é começar pequeno, criar repetição e deixar a rotina mais fácil de seguir.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-num">01</span>
+            <h3>Escolha refeições baratas</h3>
+            <p>Use a lista econômica para montar uma base simples de proteínas, carboidratos, legumes e lanches.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">02</span>
+            <h3>Organize seus 21 dias</h3>
+            <p>Acompanhe hábitos essenciais no planner e transforme intenção em rotina diária.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-num">03</span>
+            <h3>Repita o que funciona</h3>
+            <p>Com o cardápio de 7 dias, você reduz decisões e mantém consistência sem complicar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios" class="section-tint">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <p class="eyebrow">Benefícios principais</p>
+          <h2>Mais clareza para cuidar de você todos os dias.</h2>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit-card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1v22"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"></path></svg></span>
+            <h3>Comer melhor gastando pouco</h3>
+            <p>Com opções acessíveis e fáceis de repetir.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="m7 15 4-4 3 3 5-7"></path></svg></span>
+            <h3>Criar uma rotina saudável</h3>
+            <p>Com passos pequenos e possíveis de manter.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+            <h3>Ter mais disciplina</h3>
+            <p>Com acompanhamento visual por 21 dias.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5 17.5 17.5"></path><path d="M17.5 6.5 6.5 17.5"></path><circle cx="12" cy="12" r="9"></circle></svg></span>
+            <h3>Começar sem academia</h3>
+            <p>Com foco em hábitos e movimentos simples.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <span class="card-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></span>
+            <h3>Organizar alimentação e treino</h3>
+            <p>Com cardápio, planner e lista de compras juntos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="oferta" class="offer">
+      <div class="wrap offer-grid">
+        <div class="offer-copy reveal">
+          <p class="eyebrow">Oferta especial</p>
+          <h2>Leve o pacote completo por apenas R$ 19,99.</h2>
+          <p>Você recebe o ebook principal e todos os bônus em formato digital, com acesso liberado após a confirmação do pagamento.</p>
+          <div class="hero-proof" aria-label="Resumo da oferta">
+            <span class="offer-pill">Ebook + planner</span>
+            <span class="offer-pill">Pagamento único</span>
+            <span class="offer-pill">Entrega digital</span>
+          </div>
+        </div>
+        <aside class="price-box reveal" aria-label="Preço e compra">
+          <p class="eyebrow">Hoje por tempo limitado</p>
+          <span class="old-price">Valor normal R$ 47,00</span>
+          <div class="price">R$ 19,99</div>
+          <p>Projeto Corpo Novo: Receitas Fitness Baratas + Rotina Saudável de 21 Dias.</p>
+          <ul class="check-list">
+            <li>Ebook de receitas fitness baratas</li>
+            <li>Planner Fitness 21 Dias</li>
+            <li>Lista de Compras Econômica</li>
+            <li>Cardápio Simples de 7 Dias</li>
+          </ul>
+          <a class="btn-primary js-checkout-link" href="https://pay.kiwify.com.br/RQPyQaS">
+            Quero começar agora
+            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+          </a>
+          <p class="cta-note offer-note">Acesso imediato &bull; Produto 100% digital.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="seguranca">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <p class="eyebrow">Garantia e segurança</p>
+          <h2>Compra simples, segura e com acesso digital.</h2>
+          <p>O pagamento é processado pela Kiwify. Após a confirmação, você recebe as instruções de acesso no e-mail usado na compra.</p>
+        </div>
+        <div class="safe-row">
+          <article class="safe-item reveal">
+            <strong>Pagamento seguro</strong>
+            <p>Checkout protegido pela plataforma de pagamento, sem precisar enviar comprovantes manualmente.</p>
+          </article>
+          <article class="safe-item reveal">
+            <strong>Acesso imediato</strong>
+            <p>Produto digital liberado após a confirmação da compra, ideal para começar ainda hoje.</p>
+          </article>
+          <article class="safe-item reveal">
+            <strong>Produto educativo</strong>
+            <p>Conteúdo prático para organização de rotina. Não substitui orientação médica, nutricional ou profissional.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <p class="eyebrow">Perguntas frequentes</p>
+          <h2>Dúvidas rápidas antes de começar.</h2>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-item reveal">
+            <h3>O produto é físico?</h3>
+            <p>Não. É um produto 100% digital, com acesso online após a confirmação da compra.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>Preciso de academia para usar?</h3>
+            <p>Não. O foco é organização alimentar, rotina saudável e começo simples em casa.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>As receitas usam ingredientes caros?</h3>
+            <p>A proposta é justamente usar alimentos comuns e econômicos para facilitar a rotina.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>Recebo o acesso na hora?</h3>
+            <p>O acesso é liberado após a confirmação do pagamento pela Kiwify e enviado para o e-mail da compra.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>O guia promete emagrecimento?</h3>
+            <p>Não. O material ajuda na organização de hábitos, alimentação e rotina. Resultados variam de pessoa para pessoa.</p>
+          </article>
+          <article class="faq-item reveal">
+            <h3>Posso comprar pelo celular?</h3>
+            <p>Sim. A página e o checkout foram preparados para celular e computador.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="wrap final-box reveal">
+        <p class="eyebrow">Comece com um plano simples</p>
+        <h2>Seu primeiro passo saudável pode custar menos que uma refeição fora.</h2>
+        <p>Receba o pacote digital completo por R$ 19,99 e organize os próximos 21 dias com receitas, compras e cardápio no mesmo lugar.</p>
+        <div class="hero-actions">
+          <a class="btn-primary js-checkout-link" href="https://pay.kiwify.com.br/RQPyQaS">
+            Quero começar agora
+            <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+          </a>
+          <a class="btn-secondary" href="#receber">Rever conteúdo</a>
+        </div>
+        <p class="cta-note">Acesso imediato &bull; Produto 100% digital &bull; Oferta por tempo limitado.</p>
+      </div>
+    </section>
   </main>
-</body>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© 2026 Projeto Corpo Novo. Produto digital educativo.</span>
+      <a class="js-checkout-link" href="https://pay.kiwify.com.br/RQPyQaS">Comprar por R$ 19,99</a>
+    </div>
+  </footer></body>
 </html>
